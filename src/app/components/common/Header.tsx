@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { FiMenu, FiX } from 'react-icons/fi';
-
+import Image from 'next/image';
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -34,11 +34,22 @@ export default function Header() {
       <div className="container-custom">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-2">
+          <div className="relative w-15 h-15">
+            <Image
+              src="/logos.png"
+              alt="AgriPoa"
+              fill
+              className="object-contain"
+            />
+          </div>
+         
+        </Link>
+          {/* <Link href="/" className="flex items-center space-x-2">
             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">A</span>
             </div>
             <span className="text-2xl font-bold text-primary">AgriPoa</span>
-          </Link>
+          </Link> */}
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">

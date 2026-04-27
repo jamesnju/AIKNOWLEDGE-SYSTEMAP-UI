@@ -2,14 +2,25 @@
 
 import Link from 'next/link';
 import { FiFacebook, FiTwitter, FiInstagram, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-
+import Image from 'next/image';
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white pt-12 pb-6">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h3 className="text-2xl font-bold text-primary mb-4">AgriPoa</h3>
+          <div >
+                <Link href="/" className="flex items-center space-x-2 col-2">
+                      <div className="relative w-8 h-8">
+                        <Image
+                          src="/logos.png"
+                          alt="AgriPoa"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+            <h3 className="text-2xl font-bold text-primary mb-4 pt-2">AgriPoa</h3>
+                     
+                    </Link>
             <p className="text-gray-400">
               Empowering African farmers with expert knowledge and sustainable farming solutions.
             </p>

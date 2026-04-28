@@ -7,7 +7,7 @@ import AdminGuard from '../components/admin/AdminGuard';
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <AuthProvider>
-            <AdminGuard>
+      <AdminGuard>
       <AdminLayoutWrapper>{children}</AdminLayoutWrapper>
       </AdminGuard>
     </AuthProvider>

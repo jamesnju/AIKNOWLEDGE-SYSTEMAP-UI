@@ -508,6 +508,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="relative flex-1 max-w-md">
                 <input
+                
                   type="text"
                   placeholder="Search crops, diseases, or farming tips..."
                   value={searchTerm}

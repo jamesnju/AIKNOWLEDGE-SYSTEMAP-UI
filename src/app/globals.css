@@ -105,7 +105,30 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+/* For extra small screens */
+@media (max-width: 480px) {
+  .xs\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* Improve touch targets on mobile */
+@media (max-width: 640px) {
+  input, select, textarea, button {
+    font-size: 16px !important; /* Prevents zoom on focus in iOS */
+  }
+}
 
+/* Smooth transitions */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+/* Add to your global CSS if line-clamp doesn't work */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 /* @import "tailwindcss";
 
 @theme {

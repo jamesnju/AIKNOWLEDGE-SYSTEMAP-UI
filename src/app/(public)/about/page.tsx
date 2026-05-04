@@ -66,7 +66,7 @@ export default function AboutPage() {
             your contribution matters.
           </p>
           <a
-            href="/admin/register"
+            href="/contribute"
             className="inline-block bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary-dark transition-colors"
           >
             Become a Contributor

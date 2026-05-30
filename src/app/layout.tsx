@@ -19,9 +19,9 @@ export default function RootLayout({
   
   // Check if the current route is an admin route
   const isAdminRoute = pathname?.startsWith('/admin');
-  
+  const isHelpPage = pathname === '/help';
   // Don't show header and footer on admin routes
-  const showHeaderFooter = !isAdminRoute;
+  const showHeaderFooter = !isAdminRoute && !isHelpPage;
 
   return (
     <html lang="en">

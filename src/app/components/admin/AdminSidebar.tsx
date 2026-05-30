@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { FiHome, FiFileText, FiPlus, FiList, FiLogOut, FiX, FiChevronLeft } from 'react-icons/fi';
+import { FiHome, FiFileText, FiPlus, FiList, FiLogOut, FiX, FiChevronLeft, FiStar } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
 import toast from 'react-hot-toast';
 
@@ -20,6 +20,8 @@ export default function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
     { href: '/admin/dashboard', icon: FiHome, label: 'Dashboard' },
     { href: '/admin/content/list', icon: FiList, label: 'All Content' },
     { href: '/admin/content/create', icon: FiPlus, label: 'Create Content' },
+    { href: '/admin/features', icon: FiStar, label: 'Features' },
+
   ];
 
   const handleLogout = async () => {

@@ -7,6 +7,8 @@ import Footer from './components/common/Footer';
 import { Toaster } from 'react-hot-toast';
 import { usePathname } from 'next/navigation';
 import { AuthProvider } from './context/AuthContext';
+import GuidedTour from './components/common/GuidedTour';
+import { guidedTourSteps } from './components/common/GuidedTourConfig';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -30,6 +32,13 @@ export default function RootLayout({
           {showHeaderFooter && <Header />}
           <main className={showHeaderFooter ? "min-h-screen" : ""}>
             {children}
+          <GuidedTour 
+          steps={guidedTourSteps}
+          storageKey="agripoa-nav-tour-v1"
+          autoStart={true}
+          onComplete={() => console.log('Tour completed!')}
+          onSkip={() => console.log('Tour skipped')}
+        />
           </main>
           {showHeaderFooter && <Footer />}
           <Toaster position="top-right" />
@@ -38,34 +47,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// import type { Metadata } from 'next';
-// import { Inter } from 'next/font/google';
-// import './globals.css';
-// import Header from './components/common/Header';
-// import Footer from './components/common/Footer';
-// import { Toaster } from 'react-hot-toast';
-
-// const inter = Inter({ subsets: ['latin'] });
-
-// export const metadata: Metadata = {
-//   title: 'AgriPoa - Empowering African Farmers',
-//   description: 'Access expert agricultural knowledge, farming techniques, and pest management solutions',
-// };
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en">
-//       <body className={inter.className}>
-//         <Header />
-//         <main className="min-h-screen">{children}</main>
-//         <Footer />
-//         <Toaster position="top-right" />
-//       </body>
-//     </html>
-//   );
-// }
